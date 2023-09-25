@@ -1,6 +1,8 @@
 from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
 from models.UserNameModel import UserName
+
+# from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.cors import CORSMiddleware
 
 # Start API Object
 app = FastAPI()
@@ -19,14 +21,16 @@ origins = [
     'http://localhost:3000',
     'https://localhost:3000',
     'http://127.0.0.1:8000/',
-    'https://farm-tech-frontend.vercel.app/'
+    'https://farm-tech-frontend.vercel.app/',
+    'https://farm-tech-frontend.vercel.app/view2'
 ]
 
 # Middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["https://farm-tech-frontend.vercel.app", "https://farm-tech-frontend.vercel.app/view1", "https://farm-tech-frontend.vercel.app/view2"],
     allow_credentials=True,
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
