@@ -19,10 +19,6 @@ origins = [
     'http://localhost:3000',
     'https://localhost:3000',
     'http://127.0.0.1:8000/',
-    'https://agile-dawn-81028-38ff5888a187.herokuapp.com/',
-    'https://protected-meadow-39795-d8c32d547435.herokuapp.com/',
-    'https://protected-meadow-39795-d8c32d547435.herokuapp.com/view1',
-    'https://protected-meadow-39795-d8c32d547435.herokuapp.com/view2'
 ]
 
 # Middleware
