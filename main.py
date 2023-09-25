@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from models.UserNameModel import UserName
 
 # Start API Object
@@ -11,6 +12,25 @@ from DatabaseFunctions import (
     read_all_users,
     update_user,
     remove_user
+)
+
+# Origins
+origins = [
+    'http://localhost:3000',
+    'https://localhost:3000',
+    'http://127.0.0.1:8000/',
+    'https://protected-meadow-39795-d8c32d547435.herokuapp.com/',
+    'https://protected-meadow-39795-d8c32d547435.herokuapp.com/view1'
+    'https://protected-meadow-39795-d8c32d547435.herokuapp.com/view2'
+]
+
+# Middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Home Root
