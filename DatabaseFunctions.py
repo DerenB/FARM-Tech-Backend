@@ -3,11 +3,12 @@ from dotenv import load_dotenv
 import os
 
 # Get Secret Items
-load_dotenv()
-connection_string = os.getenv("ConnectionString")
+# .env Version: load_dotenv()
+# .env Version: connection_string = os.getenv("ConnectionString")
 
 # MongoDB Driver
 import motor.motor_asyncio
+connection_string = os.getenv("ConnectionString")
 client = motor.motor_asyncio.AsyncIOMotorClient(connection_string)
 
 # Create Database & Collection
